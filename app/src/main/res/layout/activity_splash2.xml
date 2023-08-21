@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Splash_Activity2">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lotti"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        app:lottie_rawRes="@raw/wifi"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:layout_above="@id/startedBtn"
+    android:gravity="center"
+    android:layout_below="@id/lotti"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speedy Server"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/light_blue"
+        android:fontFamily="@font/agfor22"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/segoeui"
+        android:text="High Speedy Server" />
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/oval_shape"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/circle"/>
+
+
+    </LinearLayout>
+</LinearLayout>
+
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/startedBtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Get Started"
+    android:textColor="@color/white"
+    android:fontFamily="@font/agfor22"
+    android:textAllCaps="false"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/buttonbg" />
+
+</RelativeLayout>
