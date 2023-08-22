@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.sohelvpn.Adapters.ServerListAdapter;
 import com.example.sohelvpn.Model.ServerInfo;
-import com.example.sohelvpn.Model.Servers;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,7 +20,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class ServerList_Activity extends AppCompatActivity {
-
     RecyclerView serverListRCV;
     ArrayList<ServerInfo> ServerList;
     ServerListAdapter serverListAdapter;
@@ -31,16 +28,11 @@ public class ServerList_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server_list);
-
-
         serverListRCV = findViewById(R.id.ServerRecycleView);
         serverListRCV.setLayoutManager(new LinearLayoutManager(this));
-
         ServerList = parseJasonData();
-
         serverListAdapter = new ServerListAdapter(this, ServerList);
         serverListRCV.setAdapter(serverListAdapter);
-
     }
 
     private ArrayList<ServerInfo> parseJasonData() {
@@ -54,14 +46,10 @@ public class ServerList_Activity extends AppCompatActivity {
             inputStream.read(buffer);
             inputStream.close();
 
-
             String jsonData=new String(buffer, StandardCharsets.UTF_8);
             JSONArray jsonArray=new JSONArray(jsonData);
-
             for (int i=0; i<jsonArray.length(); i++){
-
                 JSONObject jsonObject=jsonArray.getJSONObject(i);
-
                 String flag=jsonObject.getString("flag");
                 String country=jsonObject.getString("country");
                 String ip=jsonObject.getString("ip");
