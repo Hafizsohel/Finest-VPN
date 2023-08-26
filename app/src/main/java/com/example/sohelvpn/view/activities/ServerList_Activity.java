@@ -1,14 +1,26 @@
-package com.example.sohelvpn;
+package com.example.sohelvpn.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sohelvpn.Adapters.ServerListAdapter;
 import com.example.sohelvpn.Model.ServerInfo;
+import com.example.sohelvpn.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,22 +30,55 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ServerList_Activity extends AppCompatActivity {
     RecyclerView serverListRCV;
-    ArrayList<ServerInfo> ServerList;
+    ArrayList<ServerInfo> allServers;
     ServerListAdapter serverListAdapter;
+    ImageView backButton;
+    EditText searchEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server_list);
+
         serverListRCV = findViewById(R.id.ServerRecycleView);
         serverListRCV.setLayoutManager(new LinearLayoutManager(this));
-        ServerList = parseJasonData();
-        serverListAdapter = new ServerListAdapter(this, ServerList);
+        allServers = parseJasonData();
+        serverListAdapter = new ServerListAdapter(this, allServers);
+
         serverListRCV.setAdapter(serverListAdapter);
+        searchEditText = findViewById(R.id.searchEditText);
+        View searchView = findViewById(R.id.searchView);
+        backButton = findViewById(R.id.backButton);
+
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                performSearch(s.toString());
+            }
+        });
+
+
+      backButton.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        onBackPressed();
     }
+    });
+        }
 
     private ArrayList<ServerInfo> parseJasonData() {
         ArrayList<ServerInfo>vpnInfoList= new ArrayList<>();
@@ -67,4 +112,19 @@ public class ServerList_Activity extends AppCompatActivity {
     public void back(View view){
         finish();
     }
+
+    private void performSearch(String query) {
+        ArrayList<ServerInfo> filteredServers = new ArrayList<>();
+
+        for (ServerInfo server : allServers) {
+            String countryName = server.getCountry();
+
+            if (countryName.toLowerCase().startsWith(query.toLowerCase())) {
+                filteredServers.add(server);
+            }
+        }
+
+        serverListAdapter.updateList(filteredServers);
+    }
+
 }

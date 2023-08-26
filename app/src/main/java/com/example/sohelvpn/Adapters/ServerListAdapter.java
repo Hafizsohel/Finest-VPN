@@ -75,4 +75,9 @@ public class ServerListAdapter extends RecyclerView.Adapter<ServerListAdapter.My
             CountryName=itemView.findViewById(R.id.CountryName);
         }
     }
+    public void updateList(ArrayList<ServerInfo> newList) {
+        serverList.clear();
+        serverList.addAll(newList);
+        notifyDataSetChanged();
+    }
 }

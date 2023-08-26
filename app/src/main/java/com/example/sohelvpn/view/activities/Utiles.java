@@ -1,6 +1,8 @@
-package com.example.sohelvpn;
+package com.example.sohelvpn.view.activities;
 
 import android.net.Uri;
+
+import com.example.sohelvpn.R;
 
 public class Utiles {
     public static String getImageUrl(int resourceId) {

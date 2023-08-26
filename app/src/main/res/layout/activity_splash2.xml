@@ -4,7 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".Splash_Activity2">
+tools:context=".view.activities.Splash_Activity2">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lotti"
