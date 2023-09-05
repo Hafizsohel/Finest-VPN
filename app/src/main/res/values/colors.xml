@@ -9,4 +9,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_blue">#0383BB</color>
     <color name="light_blue">#07ABF2</color>
+
+    <color name="color_green">#B300C871</color>
+    <color name="color_green_deep">#24B58C</color>
+    <color name="color_white_dark">#f3f4f5</color>
+    <color name="color_MintDark">#0F81D0</color>
+    <color name="darkGray">#555555</color>
+    <color name="gray_transparent">#6A6A6A</color>
+    <color name="color_PrimaryTransparent">#3B5C6BC0</color>
+
+
 </resources>

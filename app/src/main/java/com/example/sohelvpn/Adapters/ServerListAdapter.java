@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.example.sohelvpn.Model.ServerInfo;
 import com.example.sohelvpn.R;
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -75,7 +76,14 @@ public class ServerListAdapter extends RecyclerView.Adapter<ServerListAdapter.My
             CountryName=itemView.findViewById(R.id.CountryName);
         }
     }
-    public void updateList(ArrayList<ServerInfo> newList) {
+   /* public void updateList(ArrayList<ServerInfo> newList) {
+        serverList.clear();
+        serverList.addAll(newList);
+        notifyDataSetChanged();
+    }*/
+
+
+    public void updateList(List<ServerInfo> newList) {
         serverList.clear();
         serverList.addAll(newList);
         notifyDataSetChanged();

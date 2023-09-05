@@ -1,10 +1,5 @@
 package com.example.sohelvpn.view.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.VpnService;
@@ -15,6 +10,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.sohelvpn.Model.ServerInfo;
 import com.example.sohelvpn.R;
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(MainActivity.this, Setting_Activity.class));
         } else if (id==R.id.Contact){
 
-            startActivity(new Intent(MainActivity.this, Setting_Activity.class));
+            startActivity(new Intent(MainActivity.this, ContactActivity.class));
         }
         return true;
     }

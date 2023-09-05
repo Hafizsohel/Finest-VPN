@@ -1,4 +1,4 @@
-package com.example.sohelvpn.view.activities;
+package com.example.sohelvpn.view;
 
 import android.net.Uri;
 
