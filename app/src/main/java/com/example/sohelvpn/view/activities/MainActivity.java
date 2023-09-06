@@ -1,6 +1,5 @@
 package com.example.sohelvpn.view.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.VpnService;
 import android.os.Bundle;
@@ -9,14 +8,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.sohelvpn.Model.ServerInfo;
 import com.example.sohelvpn.R;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
@@ -27,16 +24,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ImageButton setting, naviOpenClose,startVpnButton,stopVpnButton;
     NavigationView naviView;
     DrawerLayout drawerLayout;
-    ImageView naviBackBtn;
-
-    private Context mContext;
-
-    private MainActivity binding;
-    private CheckInternetConnection connection;
     private boolean vpnStart = false;
-
-    private ServerInfo globalServer;
-
     private boolean isServerSelected = false;
 
 
@@ -57,8 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startVpnButton = findViewById(R.id.startVpn);
         stopVpnButton = findViewById(R.id.stopVpn);
 
-        //backButton =findViewById(R.id.naviBackBtn);
-
         //navigation Drawer
         naviView = findViewById(R.id.navi_view);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -73,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startVpnConnection();
             }
         });
-
         stopVpnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,21 +100,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void next(View view) {
         startActivity(new Intent(MainActivity.this, ServerList_Activity.class));
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.AllServer) {
-
             startActivity(new Intent(MainActivity.this, ServerList_Activity.class));
+
         } else if (id == R.id.Setting) {
-
             startActivity(new Intent(MainActivity.this, Setting_Activity.class));
+
         } else if (id==R.id.About){
+            startActivity(new Intent(MainActivity.this, AboutActivity.class));
 
-            startActivity(new Intent(MainActivity.this, Setting_Activity.class));
         } else if (id==R.id.Contact){
-
             startActivity(new Intent(MainActivity.this, ContactActivity.class));
         }
         return true;
@@ -146,11 +132,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void stopVpnConnection() {
         Intent vpnServiceIntent = new Intent(this, MyVpnService.class);
         stopService(vpnServiceIntent);
-
         startVpnButton.setVisibility(View.VISIBLE);
         stopVpnButton.setVisibility(View.GONE);
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

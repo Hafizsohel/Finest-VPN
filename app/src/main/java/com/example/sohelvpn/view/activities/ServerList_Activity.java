@@ -53,13 +53,21 @@ public class ServerList_Activity extends AppCompatActivity {
 
         setupSearchView();
 
+
+
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+
     }
+
+
+
+
 
     private ArrayList<ServerInfo> parseJsonData() {
         ArrayList<ServerInfo> vpnInfoList = new ArrayList<>();
@@ -105,6 +113,7 @@ public class ServerList_Activity extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 
     private void filter(String newText) {
@@ -124,4 +133,6 @@ public class ServerList_Activity extends AppCompatActivity {
     public void back(View view) {
         finish();
     }
+
+
 }

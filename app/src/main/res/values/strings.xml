@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Sohel VPN</string>
+    <string name="stay_secure_online">Protect your online presence and sensitive data with our powerful VPN app. Whether you\'re browsing, streaming, or conducting business, our VPN keeps your connection secure from prying eyes</string>
+
+    <string name="title_global">Global Server Network:</string>
+    <string name="title_Secure">Stay Secure Online:</string>
+    <string name="title_Military">Military-Grade Encryption:</string>
+    <string name="title_Unblock">Unblock Any Website:</string>
+    <string name="title_Business">Business-Grade Privacy:</string>
+    <string name="title_Speed">Lightning-Fast Speed:</string>
+    <string name="title_Logs">No Logs Policy:</string>
+    <string name="title_Easy">Easy to Use:</string>
+    <string name="title_Global_n">Global Network: </string>
+    <string name="title_Risk">Risk-Free Trial:</string>
+    <string name="Global_Server_Network">Connect to servers in over 50 countries, ensuring lightning-fast speeds and unrestricted access to content worldwide.</string>
+    <string name="Military_Grade_Encryption">Your data is shielded with AES-256 encryption, the same level of security used by banks and government agencies.</string>
+    <string name="Unblock_Any_Website">Access geo-restricted content from streaming services, social media, and websites. Bypass censorship and enjoy a truly open internet.</string>
+    <string name="Business_Grade_Privacy">Ideal for remote work and business travelers. Keep your communications and data confidential, no matter where you are.</string>
+    <string name="Lightning_Fast_Speed">Our optimized servers ensure you can stream in HD, play online games, and download large files without slowdowns.</string>
+    <string name="No_Logs_Policy">We don\'t store your browsing activity, ensuring your privacy remains intact.</string>
+    <string name="Easy_to_Use">User-friendly interface that connects you to a secure server with a single tap.</string>
+    <string name="Global_Network">With servers in major cities worldwide, you can always find a fast and reliable connection.</string>
+    <string name="Risk_Free_Trial">Try our VPN risk-free with a 7-day free trial. Experience the benefits for yourself!</string>
+    <string name="compromise">Don\'t compromise your online privacy and security. Download our VPN app today and experience the freedom and protection you deserve.</string>
+
 </resources>
